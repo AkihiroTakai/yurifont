@@ -1,4 +1,6 @@
-#include <opencv2/core.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgcodecs.hpp>
 #include <stdio.h>
 
 bool is_black(cv::Mat *img, int x, int y);
@@ -22,7 +24,7 @@ int main(int argc, char **argv){
 }
 
 bool is_black(cv::Mat *img, int x, int y) {
-	if(img->at<Vec3b>(y, x)[0])
+	if(img->at<cv::Vec3b>(y, x)[0])
 		return true;
 	else
 		return false;
